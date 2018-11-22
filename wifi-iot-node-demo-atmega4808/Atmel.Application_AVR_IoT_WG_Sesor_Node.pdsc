@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+	<name>AVR_IoT_WG_Sensor_Node</name>
+	<vendor>Atmel</vendor>
+	<description>This is a PDSC created to make samples with ACME framework.</description>
+	<url>http://www.atmel.com</url>
+	<releases>
+		<release version="1.0.0">init</release>
+	</releases>
+
+	<components>
+
+		<component Cclass="Application" Cgroup="AVR IoT WG Sensor Node" Cversion="1.0.0" >
+			<description>A sensor node for the Google IoT Core Cloud based on the ATmega4808, WINC1510 and ECC608A. </description>
+			<files>
+		        <!-- user-doc -->
+		        <file category="doc" name="START_files/Docs/AVR_IoT_WG_Sensor_Node.rst" />
+				<!-- Config template -->
+				<file category="header" name="Config/IoT_Sensor_Node_config.h" attr="config"/>
+
+	            <!-- Source and Header files-->	
+				<file category="source" name="application_manager.c" />
+				<file category="header" name="application_manager.h" />
+				<file category="header" name="banner.h" />
+				<file category="source" name="debug_print.c" />
+				<file category="header" name="debug_print.h" />
+				<file category="source" name="led.c" />
+				<file category="header" name="led.h" />
+				<file category="source" name="main.c" />
+				<file category="source" name="sensors_handling.c" />
+				<file category="header" name="sensors_handling.h" />
+				<file category="header" name="Config/conf_winc.h" />				
+				<file category="header" name="Config/cryptoauthlib_config.h" />	
+				<file category="source" name="cloud/cloud_service.c" />
+				<file category="header" name="cloud/cloud_service.h" />
+				<file category="source" name="cloud/wifi_service.c" />
+				<file category="header" name="cloud/wifi_service.h" />
+				<file category="source" name="cloud/bsd_adapter/bsdWINC.c" />
+				<file category="header" name="cloud/bsd_adapter/bsdWINC.h" />
+				<file category="source" name="cloud/crypto_client/cryptoauthlib_main.c" />
+				<file category="header" name="cloud/crypto_client/cryptoauthlib_main.h" />				
+				<file category="source" name="cloud/crypto_client/crypto_client.c" />
+				<file category="header" name="cloud/crypto_client/crypto_client.h" />
+				<file category="source" name="cloud/mqtt_packetPopulation/mqtt_packetPopulate.c" />
+				<file category="header" name="cloud/mqtt_packetPopulation/mqtt_packetPopulate.h" />					
+				<file category="source" name="credentials_storage/credentials_storage.c" />
+				<file category="header" name="credentials_storage/credentials_storage.h" />
+			</files>
+		</component>
+		
+		<component Cclass="Crypto" Cgroup="CryptoAuthLib"  Csub="AVR-IoT-WG" Cversion="1.0.0" >
+			<description>CryptoAuthLib</description>
+			<files>
+		        <!-- user-doc -->
+		        <file category="doc" name="START_files/Docs/CryptoReadme.rst" />
+
+				<file category="doc" name="cryptoauthlib/app/README.md" />
+				<file category="doc" name="cryptoauthlib/lib/basic/README.md" />
+				<file category="doc" name="cryptoauthlib/lib/crypto/README.md" />
+				<file category="doc" name="cryptoauthlib/lib/hal/90-cryptohid.rules" />
+				<file category="source" name="cryptoauthlib/lib/tls/ec_cert-508.csr" />
+				<file category="include" name="cryptoauthlib/lib/" />
+
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert.h" />
+				<file category="source" name="cryptoauthlib/lib/atcacert/atcacert_client.c" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_client.h" />
+				<file category="source" name="cryptoauthlib/lib/atcacert/atcacert_date.c" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_date.h" />
+				<file category="source" name="cryptoauthlib/lib/atcacert/atcacert_def.c" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_def.h" />
+				<file category="source" name="cryptoauthlib/lib/atcacert/atcacert_der.c" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_der.h" />
+				<file category="source" name="cryptoauthlib/lib/atcacert/atcacert_host_hw.c" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_host_hw.h" />
+				<file category="source" name="cryptoauthlib/lib/atcacert/atcacert_host_sw.c" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_host_sw.h" />
+				<file category="header" name="cryptoauthlib/lib/atcacert/atcacert_pem.h" />				
+				<file category="header" name="cryptoauthlib/lib/atca_bool.h" />
+				<file category="source" name="cryptoauthlib/lib/atca_cfgs.c" />
+				<file category="header" name="cryptoauthlib/lib/atca_cfgs.h" />
+				<file category="source" name="cryptoauthlib/lib/atca_command.c" />
+				<file category="header" name="cryptoauthlib/lib/atca_command.h" />
+				<file category="header" name="cryptoauthlib/lib/atca_compiler.h" />
+				<file category="source" name="cryptoauthlib/lib/atca_device.c" />
+				<file category="header" name="cryptoauthlib/lib/atca_device.h" />
+				<file category="header" name="cryptoauthlib/lib/atca_devtypes.h" />
+				<file category="source" name="cryptoauthlib/lib/atca_execution.c" />
+				<file category="header" name="cryptoauthlib/lib/atca_execution.h" />
+				<file category="source" name="cryptoauthlib/lib/atca_iface.c" />
+				<file category="header" name="cryptoauthlib/lib/atca_iface.h" />
+				<file category="header" name="cryptoauthlib/lib/atca_status.h" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic.c" />
+				<file category="header" name="cryptoauthlib/lib/basic/atca_basic.h" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_aes.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_checkmac.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_counter.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_derivekey.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_ecdh.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_gendig.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_genkey.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_hmac.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_info.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_kdf.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_lock.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_mac.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_nonce.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_privwrite.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_random.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_read.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_secureboot.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_selftest.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_sha.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_sign.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_updateextra.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_verify.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_basic_write.c" />
+				<file category="source" name="cryptoauthlib/lib/basic/atca_helpers.c" />
+				<file category="header" name="cryptoauthlib/lib/basic/atca_helpers.h" />
+				<file category="header" name="cryptoauthlib/lib/cryptoauthlib.h" />
+				<file category="header" name="cryptoauthlib/lib/crypto/atca_crypto_sw.h" />
+				<file category="source" name="cryptoauthlib/lib/crypto/atca_crypto_sw_ecdsa.c" />
+				<file category="header" name="cryptoauthlib/lib/crypto/atca_crypto_sw_ecdsa.h" />
+				<file category="source" name="cryptoauthlib/lib/crypto/atca_crypto_sw_rand.c" />
+				<file category="header" name="cryptoauthlib/lib/crypto/atca_crypto_sw_rand.h" />
+				<file category="source" name="cryptoauthlib/lib/crypto/atca_crypto_sw_sha1.c" />
+				<file category="header" name="cryptoauthlib/lib/crypto/atca_crypto_sw_sha1.h" />
+				<file category="source" name="cryptoauthlib/lib/crypto/atca_crypto_sw_sha2.c" />
+				<file category="header" name="cryptoauthlib/lib/crypto/atca_crypto_sw_sha2.h" />
+				<file category="source" name="cryptoauthlib/lib/crypto/hashes/sha1_routines.c" />
+				<file category="header" name="cryptoauthlib/lib/crypto/hashes/sha1_routines.h" />
+				<file category="source" name="cryptoauthlib/lib/crypto/hashes/sha2_routines.c" />
+				<file category="header" name="cryptoauthlib/lib/crypto/hashes/sha2_routines.h" />
+				<file category="source" name="cryptoauthlib/lib/hal/atca_hal.c" />
+				<file category="header" name="cryptoauthlib/lib/hal/atca_hal.h" />
+				<file category="header" name="cryptoauthlib/lib/hal/atca_start_config.h" />
+				<file category="header" name="cryptoauthlib/lib/hal/atca_start_iface.h" />
+				<file category="source" name="cryptoauthlib/lib/hal/hal_atmega4809_i2c.c" />
+				<file category="header" name="cryptoauthlib/lib/hal/hal_atmega4809_i2c.h" />
+				<file category="source" name="cryptoauthlib/lib/hal/hal_atmega4809_timer.c" />
+				<file category="source" name="cryptoauthlib/lib/host/atca_host.c" />
+				<file category="header" name="cryptoauthlib/lib/host/atca_host.h" />
+				<file category="source" name="cryptoauthlib/lib/jwt/atca_jwt.c" />
+				<file category="header" name="cryptoauthlib/lib/jwt/atca_jwt.h" />
+				<file category="source" name="cryptoauthlib/lib/tls/atcatls.c" />
+				<file category="header" name="cryptoauthlib/lib/tls/atcatls.h" />
+				<file category="source" name="cryptoauthlib/lib/tls/atcatls_cfg.c" />
+				<file category="header" name="cryptoauthlib/lib/tls/atcatls_cfg.h" />
+			</files>	
+		</component>
+
+		<component Cclass="WIFI" Cgroup="WINC"  Csub="Core" Cversion="1.0.0" >
+			<description>WINC1510</description>
+			<files>
+		        <!-- user-doc -->
+		        <file category="doc" name="START_files/Docs/WINCReadme.rst" />
+
+				<file category="header" name="winc/bsp/include/nm_bsp.h" />
+				<file category="header" name="winc/bsp/include/nm_bsp_internal.h" />
+				<file category="header" name="winc/bsp/include/nm_bsp_mega.h" />
+				<file category="source" name="winc/bsp/source/nm_bsp_mega.c" />
+				<file category="header" name="winc/bus_wrapper/include/nm_bus_wrapper.h" />
+				<file category="source" name="winc/bus_wrapper/source/nm_bus_wrapper_mega.c" />
+				<file category="header" name="winc/common/include/nm_common.h" />
+				<file category="header" name="winc/common/include/nm_debug.h" />
+				<file category="source" name="winc/common/source/nm_common.c" />
+				<file category="header" name="winc/driver/include/ecc_types.h" />
+				<file category="header" name="winc/driver/include/m2m_ate_mode.h" />
+				<file category="header" name="winc/driver/include/m2m_crypto.h" />
+				<file category="header" name="winc/driver/include/m2m_ota.h" />
+				<file category="header" name="winc/driver/include/m2m_periph.h" />
+				<file category="header" name="winc/driver/include/m2m_ssl.h" />
+				<file category="header" name="winc/driver/include/m2m_types.h" />
+				<file category="header" name="winc/driver/include/m2m_wifi.h" />
+				<file category="source" name="winc/driver/source/m2m_ate_mode.c" />
+				<file category="source" name="winc/driver/source/m2m_crypto.c" />
+				<file category="source" name="winc/driver/source/m2m_hif.c" />
+				<file category="header" name="winc/driver/source/m2m_hif.h" />
+				<file category="source" name="winc/driver/source/m2m_ota.c" />
+				<file category="source" name="winc/driver/source/m2m_periph.c" />
+				<file category="source" name="winc/driver/source/m2m_ssl.c" />
+				<file category="source" name="winc/driver/source/m2m_wifi.c" />
+				<file category="source" name="winc/driver/source/nmasic.c" />
+				<file category="header" name="winc/driver/source/nmasic.h" />
+				<file category="source" name="winc/driver/source/nmbus.c" />
+				<file category="header" name="winc/driver/source/nmbus.h" />
+				<file category="source" name="winc/driver/source/nmdrv.c" />
+				<file category="header" name="winc/driver/source/nmdrv.h" />
+				<file category="source" name="winc/driver/source/nmi2c.c" />
+				<file category="header" name="winc/driver/source/nmi2c.h" />
+				<file category="source" name="winc/driver/source/nmspi.c" />
+				<file category="header" name="winc/driver/source/nmspi.h" />
+				<file category="source" name="winc/driver/source/nmuart.c" />
+				<file category="header" name="winc/driver/source/nmuart.h" />
+				<file category="header" name="winc/programmer/programmer.h" />
+				<file category="header" name="winc/programmer/programmer_apis.h" />
+				<file category="header" name="winc/socket/include/m2m_socket_host_if.h" />
+				<file category="header" name="winc/socket/include/socket.h" />
+				<file category="source" name="winc/socket/source/socket.c" />
+				<file category="header" name="winc/socket/source/socket_internal.h" />
+				<file category="header" name="winc/spi_flash/include/spi_flash.h" />
+				<file category="header" name="winc/spi_flash/include/spi_flash_map.h" />
+				<file category="source" name="winc/spi_flash/source/spi_flash.c" />				
+			</files>
+		</component>
+
+		<component Cclass="MQTT" Cgroup="IoT"  Csub="Core" Cversion="1.0.0" >
+			<description>MQTT</description>
+			<files>
+		        <!-- user-doc -->
+		        <file category="doc" name="START_files/Docs/MQTTReadme.rst" />
+
+				<file category="source" name="mqtt/mqtt_comm_bsd/mqtt_comm_layer.c" />
+				<file category="header" name="mqtt/mqtt_comm_bsd/mqtt_comm_layer.h" />
+				<file category="header" name="mqtt/mqtt_config.h" />
+				<file category="source" name="mqtt/mqtt_core/mqtt_core.c" />
+				<file category="header" name="mqtt/mqtt_core/mqtt_core.h" />
+				<file category="header" name="mqtt/mqtt_debug.h" />
+				<file category="source" name="mqtt/mqtt_exchange_buffer/mqtt_exchange_buffer.c" />
+				<file category="header" name="mqtt/mqtt_exchange_buffer/mqtt_exchange_buffer.h" />
+				<file category="source" name="mqtt/mqtt_packetTransfer_interface.c" />
+				<file category="header" name="mqtt/mqtt_packetTransfer_interface.h" />			
+			</files>
+		</component>
+
+		<component Cclass="CLI" Cgroup="Interface"  Csub="Core" Cversion="1.0.0" >
+			<description>CLI</description>
+			<files>
+		        <!-- user-doc -->
+		        <file category="doc" name="START_files/Docs/CLIReadme.rst" />
+
+		        <file category="include" name="cli/" />
+		        <file category="source" name="cli/cli.c" />
+		        <file category="header" name="cli/cli.h" />
+			</files>
+		</component>
+
+	</components>
+
+	<examples>
+		<example name="IOT_Sensor_Node_Mega4808_Example_Application" folder="" doc="Abstract.txt" version="1.0.0">
+			<description>This example uses the IO1 XPLAINED PRO light sensor, temperature sensor and LED. 
+			The device's ADC samples the light sensor. The device's I2C reads the temperature sensor.
+			The device's PWM controls the IO1 LED. printf() output is routed to EDBG USART. </description>
+			<board vendor="Atmel" name="CustomBoard"/>
+			<project>
+				<environment name="gcc" load="Makefile" />
+				<environment name="atmel_start" load="START_files/Configuration/AVR_IoT_WG_Sensor_Node.yaml"/>
+			</project>
+			<attributes>
+				<component Cclass="Application" Cgroup="AVR IoT WG Sensor Node"/>
+				<category>Cryptography</category>
+				<category>Sensors</category>
+				<category>Wireless</category>
+			</attributes>
+		</example>
+	</examples>
+</package>

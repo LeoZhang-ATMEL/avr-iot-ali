@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config-map>
+
+	<middleware name="CryptoAuthLib" singleton="true">
+		<description>CryptoAuthLib</description>
+		<user-guide path="START_files/Docs/CryptoReadme.rst"/>
+		<required-component name="Crypto:CryptoAuthLib:AVR-IoT-WG"/>
+		<dependency label="I2C_0">
+			<component api="Drivers:I2C:Master"/>
+		</dependency>
+	</middleware>
+
+	<middleware name="WINC1510" singleton="true">
+		<description>WINC1510</description>
+		<user-guide path="START_files/Docs/WINCReadme.rst"/>
+		<required-component name="WIFI:WINC:Core"/>
+		<dependency label="SPI_0">
+			<component module-mode="SPI Master Polled" api="Drivers:SPI:Basic"/>
+		</dependency>
+	</middleware>
+
+	<middleware name="MQTT" singleton="true">
+		<description>MQTT</description>
+		<user-guide path="START_files/Docs/MQTTReadme.rst"/>
+		<required-component name="MQTT:IoT:Core"/>
+	</middleware>
+
+	<middleware name="CLI" singleton="true">
+		<description>CLI</description>
+		<user-guide path="START_files/Docs/CLIReadme.rst"/>
+		<required-component name="CLI:Interface:Core"/>
+	</middleware>
+	
+</config-map>
